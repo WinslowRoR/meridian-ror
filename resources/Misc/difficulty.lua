@@ -1,0 +1,10 @@
+local whispermind = Difficulty.new("Whispermind")
+whispermind.displayName = "Whispermind"
+whispermind.icon = Sprite.load("Difficulty_Whispermind", "resources/Misc/Sprites/difWhispermind", 3, 13, 11)
+whispermind.scale = 0.3
+whispermind.scaleOnline = 0.033
+local colorWhispermind = tostring(Color.fromHex(0x617799).gml)
+whispermind.description = "&"..colorWhispermind.."&-WHISPERMIND-&!&\n&r&FUTILE MINDS&!&\nWHISPERS FROM BELOW BECON MY NAME\nIT HAS TO BE SAID"
+whispermind.forceHardElites = true
+whispermind.enableBlightedEnemies = true
+whispermind.enableMissileIndicators = false
