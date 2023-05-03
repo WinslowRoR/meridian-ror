@@ -8,7 +8,7 @@ require("resources.Stages.StageLoader")
 
 require("resources.Enemies.BasaltCrab.basaltCrab")
 
-require("resources.Enemies.BasaltCrab.giant")
+require("resources.Enemies.StoneGuardian.giant")
 
 require("resources.Misc.menuChanger")
 
