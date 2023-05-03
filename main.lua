@@ -15,11 +15,3 @@ require("resources.Items.ChisseledGranite")
 require("resources.Items.Whispermind1")
 
 require("resources.Misc.difficulty")
-
-if not global.rormlflag.mr_redesigned_sprites then
-	require("resources.Misc.enemyChanger")
-end
-
-if not global.rormlflag.mr_new_sounds then
-	require("resources.Misc.soundChanger")
-end
