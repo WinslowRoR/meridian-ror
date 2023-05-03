@@ -1,4 +1,4 @@
-local path = "resources/Enemies/stoneGiant/"
+local path = "resources/Enemies/StoneGuardian/"
 local sprites = {
     idle = Sprite.load("giantIdle", path.."giantIdle", 1, 14, 48),
     walk = Sprite.load("giantWalk", path.."giantWalk", 4, 21, 49),
@@ -77,23 +77,24 @@ for _, elite in ipairs(EliteType.findAll("vanilla")) do
     card.eliteTypes:add(elite)
 end
 
-local stages {
+local stages = {
     Stage.find("Desolate Forest"), -- vanilla
 	Stage.find("Magma Barracks"),
 	
     Stage.find("Basalt Quarry", "RoRMaps"), -- Meridian
-	Stage.find("Starswept Valley", "RoRMaps")
-	Stage.find("Dissonant Reliquary", "RoRMaps")
+	Stage.find("Starswept Valley", "RoRMaps"),
+	Stage.find("Dissonant Reliquary", "RoRMaps"),
 }
+
 if modloader.checkMod("Starstorm") then
-stages = {
-
-	}
-elseif not modloader.checkMod("Starstorm") then
-stages = {
-
-}
+	table.insert(stages, Stage.find("Torrid Outlands", "Starstorm"))
+	table.insert(stages, Stage.find("Uncharted Mountain", "Starstorm"))
+	table.insert(stages, Stage.find("Whistling Basin", "Starstorm"))
 end
+
+local stagesPostLoop = {
+	Stage.find("Basalt Quarry", "RoRMaps")
+}
 
 for _, stage in ipairs(stages) do
 	stage.enemies:add(card)
