@@ -14,6 +14,6 @@ require("resources.Misc.menuChanger")
 
 require("resources.Items.LoneMansBox")
 
-require("resources.Items.Whispermind1")
+require("resources.Items.ChisseledGranite")
 
 require("resources.Misc.difficulty")
