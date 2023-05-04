@@ -12,7 +12,7 @@ require("resources.Enemies.StoneGuardian.giant")
 
 require("resources.Misc.menuChanger")
 
-require("resources.Items.ChisseledGranite")
+require("resources.Items.LoneMansBox")
 
 require("resources.Items.Whispermind1")
 
