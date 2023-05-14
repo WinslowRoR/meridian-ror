@@ -14,7 +14,7 @@ Sprite.load("BasaltClouds2", path.."Stages/BasaltQuarry/BasaltClouds2", 1, 0, 0)
 Sprite.load("BasaltClouds3", path.."Stages/BasaltQuarry/BasaltClouds3", 1, 0, 0)
 
 local BasaltQuarry = require("resources.Stages.BasaltQuarry.stage")
-Stage.progression[1]:add(BasaltQuarry)
+Stage.progression[4]:add(BasaltQuarry)
 --[[local BasaltQuarryVar = require("resources.Stages.BasaltQuarry.variant")
 BasaltQuarry.rooms:add(BasaltQuarryVar)
 ]]
@@ -53,7 +53,7 @@ MarshlandSanctuary.music = Sound.find("musicStage4")
 -- Coral Depths --
 Sprite.load("CR_4_1_tileset", path.."Stages/CoralDepths/tileset", 1, 0, 0)
 local CoralDepths = require("resources.Stages.CoralDepths.stage")
-Stage.progression[4]:add(CoralDepths)
+--Stage.progression[4]:add(CoralDepths)
 
 -- Dissonant Reliquary --
 Sprite.load("CR_5_1_tileset", path.."Stages/DissonantReliquary/tileset", 1, 0, 0)
@@ -72,14 +72,14 @@ Stage.progression[5]:add(DissonantReliquary)
 
 DissonantReliquary.music = Sound.load("killing_wind", path.."Misc/Music/stageDissonantReliquary.ogg")
 
--- Skyrift Monument --
-Sprite.load("CR_5_2_tileset", path.."Stages/SkyriftMonument/tileset", 1, 0, 0)
+-- Hive Savanna --
+Sprite.load("bTile16Savannah", path.."Stages/HiveSavanna/tileset", 1, 0, 0)
+Sprite.load("SavannaSky", path.."Stages/HiveSavanna/sky", 1, 0, 0)
+Sprite.load("Planets_C1_2", path.."Stages/HiveSavanna/planet", 1, 0, 0)
+Sprite.load("TempleHill", path.."Stages/HiveSavanna/bg1", 1, 0, 0)
+Sprite.load("CloudsSavanna", path.."Stages/HiveSavanna/clouds", 1, 0, 0)
 
-local SkyriftMonument = require("resources.Stages.SkyriftMonument.stage")
-Stage.progression[5]:add(SkyriftMonument)
+local HiveSavanna = require("resources.Stages.HiveSavanna.stage")
+Stage.progression[1]:add(HiveSavanna)
 
--- Whistlemind --
-Sprite.load("CR_WM1_tileset", path.."Stages/Whispermind/tileset1", 1, 0, 0)
-local WM1 = require("resources.Stages.Whispermind.gateway_stage")
-
-WM1.music = Sound.load("Gateway", path.."Misc/Music/gateway.ogg")
+HiveSavanna.music = Sound.find("musicStage2")
