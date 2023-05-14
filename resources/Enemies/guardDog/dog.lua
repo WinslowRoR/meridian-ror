@@ -119,15 +119,12 @@ for _, elite in ipairs(EliteType.findAll("vanilla")) do
     card.eliteTypes:add(elite)
 end
 
-local stages
-if modloader.checkMod("Starstorm") then
-stages = {
-
-	}
-elseif not modloader.checkMod("Starstorm") then
-stages = {
-
+local stages = {
+	Stage.find("Temple of the Elders")
 }
+if modloader.checkMod("Starstorm") then
+	table.insert(stages, Stage.find("Torrid Outlands", "Starstorm"))
+	table.insert(stages, Stage.find("Uncharted Mountain", "Starstorm"))
 end
 
 for _, stage in ipairs(stages) do
