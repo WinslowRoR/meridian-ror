@@ -12,6 +12,8 @@ require("resources.Enemies.guardDog.dog")
 
 require("resources.Enemies.StoneGuardian.giant")
 
+require("resources.Elites.forsaken")
+
 require("resources.Misc.menuChanger")
 
 require("resources.Items.LoneMansBox")
