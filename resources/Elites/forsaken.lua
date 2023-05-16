@@ -28,15 +28,29 @@ end)
 
 --manifreakinglovethemacrobestheyreliterallythebest
 
+function CheckValid(anInstance)
+	return anInstance and anInstance:isValid()
+end
+
 registercallback("onDamage", function(target, damage, source)
 --	print(target, damage, source)
-	if not source or not source:isValid() then return end
-	if target:isValid() and isa(target, "PlayerInstance") and (source:get("elite_type") == ID or source:getParent():get("elite_type") == ID) then
-		local lockedSkill = math.random(2,5)
-		local tD = target:getData()
-		target:setAlarm(lockedSkill, target:getAlarm(lockedSkill) + 120)
-		tD.lockTimer[lockedSkill] = tD.lockTimer[lockedSkill] + 120
+if Difficulty.getActive().forceHardElites == true or misc.director:get("stages_passed") >= 2 then
+	if not CheckValid(source) then return end
+--	print("source is valid")
+	if target:isValid() and isa(target, "PlayerInstance") then
+--		print("target is valid")
+		if source:get("elite_type") == ID or ((source:get("parent") and CheckValid(Object.findInstance(source:get("parent"))))) then
+--			print("parent is valid/source is elite")
+			if source:get("elite_type") == ID or Object.findInstance(source:get("parent")):get("elite_type") == ID or source:getParent():get("elite_type") == ID then
+--				print("source or damager's parent is elite! woohoo!")
+				local lockedSkill = math.random(2,5)
+				local tD = target:getData()
+				target:setAlarm(lockedSkill, target:getAlarm(lockedSkill) + 120)
+				tD.lockTimer[lockedSkill] = tD.lockTimer[lockedSkill] + 120
+			end
+		end
 	end
+end
 end)
 
 registercallback("onPlayerStep", function(player)
