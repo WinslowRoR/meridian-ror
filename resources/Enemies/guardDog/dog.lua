@@ -89,7 +89,7 @@ dog:addCallback("draw", function(self)
 		graphics.drawImage{self.sprite, self.x + math.random(-2, 2), self.y + math.random(-2, 2), self.subimage,
 		alpha = math.random(0.5, 0.4),
 		color = Color.PINK,
-		xscale = self.xscale + math.random(-0.02, 0.02)
+		xscale = self.xscale + math.random(-0.02, 0.02),
 		yscale = 1 + math.random(-0.02, 0.02)
 		}
 	end
