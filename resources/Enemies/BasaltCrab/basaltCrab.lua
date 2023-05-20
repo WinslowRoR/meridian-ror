@@ -24,9 +24,9 @@ BasaltCrab:addCallback("create", function(actor)
     local actorAc = actor:getAccessor()
     local data = actor:getData()
     actorAc.name = "Basalt Crab"
-    actorAc.maxhp = 400 * Difficulty.getScaling("hp")
+    actorAc.maxhp = 320 * Difficulty.getScaling("hp")
     actorAc.hp = actorAc.maxhp
-    actorAc.damage = 57 * Difficulty.getScaling("damage")
+    actorAc.damage = 12 * Difficulty.getScaling("damage")
     actorAc.pHmax = 0.8
 	actorAc.walk_speed_coeff = 1.25
 	data.attackFrames = 0
@@ -44,7 +44,7 @@ BasaltCrab:addCallback("create", function(actor)
     actorAc.health_tier_threshold = 3
     actorAc.knockback_cap = actorAc.maxhp
     actorAc.exp_worth = 30 * Difficulty.getScaling()
-    actorAc.can_drop = 0
+    actorAc.can_drop = 1
     actorAc.can_jump = 0
 end)
 Monster.giveAI(BasaltCrab)
