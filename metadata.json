@@ -5,18 +5,4 @@
 	"internalname": "RoRMaps",
     "author": "Winslow, Altzeus, retroPacifist",
 	"mpcompat": true,
-    "options" : [
-        {
-            "name" : "Disable Redesigned Sprites",
-            "flag" : "mr_redesigned_sprites",
-        },
-        {
-            "name" : "Disable New Sounds",
-            "flag" : "mr_new_sounds",
-        },
-		{
-		    "name" : "Disable vanilla stages",
-            "flag" : "mr_disable_vanilla_stages",
-		}
-	]
 }
