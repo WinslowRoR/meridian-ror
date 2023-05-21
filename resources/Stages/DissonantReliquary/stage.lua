@@ -1756,7 +1756,7 @@ local STAGE_OBJECTS = {
 }
 
 local STAGE_BACKGROUNDS = {
-    [9800] = {"CR_5_1_bg2", "RoRMaps", 1, 0, 0.40, 0.80, 0, 0, 0, 0.60 },
+    [9800] = {"ReliquaryBG2", "RoRMaps", 1, 0, 0.40, 0.80, 0, 0, 0, 0.60 },
     [9900] = {"HugePlanet", "RoRMaps", 0, 0, 1, 1, -631, 0, 0.40, 0 },
     [10000] = {"Reliquarysky", "RoRMaps", 1, 1, 0.90, 0.90, 0, 0, 0, 0 },
 }
