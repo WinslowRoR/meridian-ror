@@ -10,7 +10,7 @@ local STAGE_INFO = {
 local STAGE_LAYERS = {
     {
         depth = 12,
-        sprite = "CR_5_1_tileset",
+        sprite = "Tile16Reliquary",
         origin = "RoRMaps",
         tiles = {
             [184] = {
@@ -928,7 +928,7 @@ local STAGE_LAYERS = {
     },
     {
         depth = 11,
-        sprite = "CR_5_1_tileset",
+        sprite = "Tile16Reliquary",
         origin = "RoRMaps",
         tiles = {
             [132] = {
@@ -972,7 +972,7 @@ local STAGE_LAYERS = {
     },
     {
         depth = 2,
-        sprite = "CR_5_1_tileset",
+        sprite = "Tile16Reliquary",
         origin = "RoRMaps",
         tiles = {
             [184] = {
@@ -1444,7 +1444,7 @@ local STAGE_LAYERS = {
     },
     {
         depth = 13,
-        sprite = "CR_5_1_tileset",
+        sprite = "Tile16Reliquary",
         origin = "RoRMaps",
         tiles = {
             [138] = {
@@ -1757,8 +1757,8 @@ local STAGE_OBJECTS = {
 
 local STAGE_BACKGROUNDS = {
     [9800] = {"CR_5_1_bg2", "RoRMaps", 1, 0, 0.40, 0.80, 0, 0, 0, 0.60 },
-    [9900] = {"CR_5_1_planet", "RoRMaps", 0, 0, 1, 1, -631, 0, 0.40, 0 },
-    [10000] = {"CR_5_1_sky", "RoRMaps", 1, 1, 0.90, 0.90, 0, 0, 0, 0 },
+    [9900] = {"HugePlanet", "RoRMaps", 0, 0, 1, 1, -631, 0, 0.40, 0 },
+    [10000] = {"Reliquarysky", "RoRMaps", 1, 1, 0.90, 0.90, 0, 0, 0, 0 },
 }
 
 local STAGE_INTERACTABLES = {
