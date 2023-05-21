@@ -8,7 +8,9 @@ elite.color = Color.fromRGB(87, 70, 168)
 elite.palette = sprPal
 
 for _, i in ipairs(MonsterCard.findAll("vanilla")) do
-	i.eliteTypes:add(elite)
+	if i ~= MonsterCard.find("Magma Worm", "vanilla")
+		i.eliteTypes:add(elite)
+	end
 end
 
 registercallback("postLoad", function()
@@ -46,7 +48,8 @@ bubbleObj:addCallback("step", function(self)
 	local sD = self:getData()
 	sD.life = sD.life + 1
 	if sD.life >= sD.lifeLim then
-			sD.owner:fireExplosion(self.x, self.y, 25/19, 25/4, 0.6, bubblePop)
+--			sD.owner:fireExplosion(self.x, self.y, 25/19, 25/4, 0.6, bubblePop)
+			misc.fireExplosion(self.x, self.y, 20/19, 20/4, math.round(sD.damage * 0.6), "enemy", bubblePop)
 			self:destroy()
 			pop:play()
 	end
@@ -59,7 +62,8 @@ bubbleObj:addCallback("step", function(self)
 	self.y = math.approach(self.y, sD.locY, math.abs(math.round((self.y - sD.locY) * 0.1)))
 	for _, p in ipairs(misc.players) do
 		if self:collidesWith(p, self.x, self.y) then
-			sD.owner:fireExplosion(self.x, self.y, 25/19, 25/4, 1.2, bubblePop)
+--			sD.owner:fireExplosion(self.x, self.y, 25/19, 25/4, 1.2, bubblePop)
+			misc.fireExplosion(self.x, self.y, 20/19, 20/4, math.round(sD.damage * 0.6), "enemy", bubblePop)
 			self:destroy()
 			pop:play()
 		end
