@@ -14,6 +14,8 @@ require("resources.Enemies.StoneGuardian.giant")
 
 require("resources.Elites.forsaken")
 
+require("resources.Elites.bubble")
+
 require("resources.Misc.menuChanger")
 
 require("resources.Items.LoneMansBox")
