@@ -12,9 +12,15 @@ require("resources.Enemies.guardDog.dog")
 
 require("resources.Enemies.StoneGuardian.giant")
 
+require("resources.Elites.blessed")
+
 require("resources.Elites.forsaken")
 
 require("resources.Elites.bubble")
+
+require("resources.Elites.sorrow")
+
+require("resources.Elites.evoke")
 
 require("resources.Misc.menuChanger")
 
