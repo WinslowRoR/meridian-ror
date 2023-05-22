@@ -2,6 +2,7 @@ local path = "resources/Elites/"
 local elite = EliteType.new("bubble")
 local sprPal = Sprite.load(path .. "bubblePal", 1, 0, 0)
 local ID = elite.ID
+local bID = EliteType.find("blessed").ID
 
 elite.displayName = "Rippling"
 elite.color = Color.fromRGB(87, 70, 168)
@@ -23,7 +24,7 @@ end)
 
 registercallback("onEliteInit", function(actor)
 	local aD = actor:getData()
-	if actor:get("elite_type") == ID then
+	if actor:get("elite_type") == ID or actor:get("elite_type") == bID then
 		aD.bubbleCooldown = 0
 	end
 end)
@@ -77,12 +78,18 @@ registercallback("onStep", function()
 			iD.bubbleCooldown = iD.bubbleCooldown - 1
 		end
 	end
+	for _, i in ipairs(enemies:findMatching("elite_type", bID)) do
+		local iD = i:getData()
+		if iD.bubbleCooldown > 0 then
+			iD.bubbleCooldown = iD.bubbleCooldown - 1
+		end
+	end
 end)
 
 registercallback("onDamage", function(target, damage, source)
 --if Difficulty.getActive().forceHardElites == true or misc.director:get("stages_passed") >= 2 then
 	if not CheckValid(source) then return end
-	if target:isValid() and target:get("elite_type") == ID then
+	if target:isValid() and (target:get("elite_type") == ID or target:get("elite_type") == bID) then
 		local tD = target:getData()
 		if tD.bubbleCooldown <= 0 then
 			local bubbleAmount = math.random(1, 3)
