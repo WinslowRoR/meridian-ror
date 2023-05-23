@@ -1,8 +1,8 @@
 local blasphemy = Difficulty.new("BLASPHEMY")
 blasphemy.displayName = "BLASPHEMY"
 blasphemy.icon = Sprite.load("difBlasphemy", "resources/Misc/Sprites/difBlasphemy", 3, 13, 11)
-blasphemy.scale = 0.3
-blasphemy.scaleOnline = 0.033
+blasphemy.scale = 0.4
+blasphemy.scaleOnline = 0.04
 local colorBlasphemy = tostring(Color.fromHex(0xCCAE5B).gml)
 blasphemy.description = "&"..colorBlasphemy.."&-BLASPHEMY-&!&\nOUR KING, OUR KNIGHT,\n\nOUR SAVIOR, OUR LEADER\n\nTHE LEADER OF THE &"..colorBlasphemy.."&DIVINE!&!&"
 blasphemy.forceHardElites = true
