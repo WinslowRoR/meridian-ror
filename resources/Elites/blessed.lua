@@ -13,7 +13,7 @@ registercallback("onGameStart", function()
 	dD.blessed = 0
 end)
 
-registercallback("postLoad", function()
+registercallback("onStageEntry", function()
 local dD = misc.director:getData()
 if misc.director:get("stages_passed") >= 5 and dD.blessed == 0 then
 	for _, i in ipairs(MonsterCard.findAll("vanilla")) do
@@ -31,6 +31,23 @@ if misc.director:get("stages_passed") >= 5 and dD.blessed == 0 then
 	dD.blessed = 1
 end
 end)
+
+registercallback("onGameStart", function()
+	local dD = misc.director:getData()
+	for _, i in ipairs(MonsterCard.findAll("vanilla")) do
+		if i.isBoss == false then
+			i.eliteTypes:remove(elite)
+		end
+	end
+	for _, m in ipairs(modloader.getMods()) do
+		for _, i in ipairs(MonsterCard.findAll(modloader.getModName(m))) do
+			if i.isBoss == false then
+				i.eliteTypes:remove(elite)
+			end
+		end
+	end
+end)
+
 
 local enemies = ParentObject.find("enemies")
 
