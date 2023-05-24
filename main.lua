@@ -29,3 +29,5 @@ require("resources.Items.LoneMansBox")
 require("resources.Items.Snowflake")
 
 require("resources.Misc.difficulty")
+
+require("resources.Objects.eliteShrine")
