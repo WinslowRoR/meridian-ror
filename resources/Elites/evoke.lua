@@ -1,3 +1,5 @@
+--TODO: stop enemies spawning in the ground/walls
+
 local path = "resources/Elites/"
 local elite = EliteType.new("summon")
 local sprPal = Sprite.load(path .. "evokePal", 1, 0, 0)
@@ -110,7 +112,7 @@ end)
 
 registercallback("onNPCDeath", function(npc)
 	local nD = npc:getData()
-	if nD.evoker ~= nil and Object.findInstance(nD.evoker):isValid() then
+	if nD.evoker ~= nil and Object.findInstance(nD.evoker) and Object.findInstance(nD.evoker):isValid() then
 		local eD = Object.findInstance(nD.evoker):getData()
 		eD.minionCount = eD.minionCount - 1
 	end

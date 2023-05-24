@@ -59,14 +59,15 @@ bubbleObj:addCallback("step", function(self)
 		self:destroy()
 		pop:play()
 	end
-	self.x = math.approach(self.x, sD.locX, math.abs(math.round((self.x - sD.locX) * 0.1)))
-	self.y = math.approach(self.y, sD.locY, math.abs(math.round((self.y - sD.locY) * 0.1)))
 	for _, p in ipairs(misc.players) do
 		if self:collidesWith(p, self.x, self.y) then
 --			sD.owner:fireExplosion(self.x, self.y, 25/19, 25/4, 1.2, bubblePop)
 			misc.fireExplosion(self.x, self.y, 20/19, 20/4, math.round(sD.damage * 0.6), "enemy", bubblePop)
 			self:destroy()
 			pop:play()
+		else
+			self.x = math.approach(self.x, sD.locX, math.abs(math.round((self.x - sD.locX) * 0.1)))
+			self.y = math.approach(self.y, sD.locY, math.abs(math.round((self.y - sD.locY) * 0.1)))
 		end
 	end
 end)

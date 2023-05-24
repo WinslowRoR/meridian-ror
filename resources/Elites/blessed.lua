@@ -14,8 +14,8 @@ registercallback("onGameStart", function()
 end)
 
 registercallback("postLoad", function()
---local dD = misc.director:getData()
---if misc.director:get("stages_passed") >= 5 and dD.blessed == 0 then
+local dD = misc.director:getData()
+if misc.director:get("stages_passed") >= 5 and dD.blessed == 0 then
 	for _, i in ipairs(MonsterCard.findAll("vanilla")) do
 		if i.isBoss == false then
 			i.eliteTypes:add(elite)
@@ -28,8 +28,8 @@ registercallback("postLoad", function()
 			end
 		end
 	end
---	dD.blessed = 1
---end
+	dD.blessed = 1
+end
 end)
 
 local enemies = ParentObject.find("enemies")
