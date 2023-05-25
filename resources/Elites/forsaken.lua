@@ -110,19 +110,31 @@ end)
 registercallback("onDraw", function()
 	for _, i in ipairs(enemies:findMatching("elite_type", ID)) do
 		local iD = i:getData()
+		local radius
+		if i:get("show_boss_health") == 1 then
+			radius = 80
+		else
+			radius = 50
+		end
 		graphics.color(Color.fromRGB(57, 92, 90))
 		graphics.alpha(0.2)
-		graphics.circle(i.x, i.y, 50, false)
+		graphics.circle(i.x, i.y, radius, false)
 		graphics.alpha(1)
-		graphics.circle(i.x, i.y, 50, true)
+		graphics.circle(i.x, i.y, radius, true)
 	end
 	for _, i in ipairs(enemies:findMatching("elite_type", bID)) do
 		local iD = i:getData()
+		local radius
+		if i:get("show_boss_health") == 1 then
+			radius = 80
+		else
+			radius = 50
+		end
 		graphics.color(Color.fromRGB(255, 237, 187))
 		graphics.alpha(0.2)
-		graphics.circle(i.x, i.y, 50, false)
+		graphics.circle(i.x, i.y, radius, false)
 		graphics.alpha(1)
-		graphics.circle(i.x, i.y, 50, true)
+		graphics.circle(i.x, i.y, radius, true)
 	end
 end)
 

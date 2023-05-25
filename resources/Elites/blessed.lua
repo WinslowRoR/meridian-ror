@@ -10,12 +10,14 @@ elite.palette = sprPal
 
 registercallback("onGameStart", function()
 	local dD = misc.director:getData()
-	dD.blessed = 0
+	dD.blessed1 = 0
+	dD.blessed2 = 0
+	dD.blessed3 = 0
 end)
 
 registercallback("onStageEntry", function()
 local dD = misc.director:getData()
-if misc.director:get("stages_passed") >= 5 and dD.blessed == 0 then
+if misc.director:get("stages_passed") >= 5 and dD.blessed1 == 0 then
 	for _, i in ipairs(MonsterCard.findAll("vanilla")) do
 		if i.isBoss == false then
 			i.eliteTypes:add(elite)
@@ -28,7 +30,17 @@ if misc.director:get("stages_passed") >= 5 and dD.blessed == 0 then
 			end
 		end
 	end
-	dD.blessed = 1
+	dD.blessed1 = 1
+elseif misc.director:get("stages_passed") >= 15 and dD.blessed2 == 0 then
+	for _, i in ipairs(MonsterCard.findAll("vanilla")) do
+		i.eliteTypes:add(elite)
+	end
+	for _, m in ipairs(modloader.getMods()) do
+		for _, i in ipairs(MonsterCard.findAll(modloader.getModName(m))) do
+			i.eliteTypes:add(elite)
+		end
+	end
+	dD.blessed2 = 1
 end
 end)
 
