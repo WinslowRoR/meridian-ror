@@ -3,6 +3,7 @@ local sprites = {
     idle = Sprite.load("giantIdle", path.."giantIdle", 1, 14, 48),
     walk = Sprite.load("giantWalk", path.."giantWalk", 4, 21, 49),
     shoot = Sprite.load("giantAttack", path.."giantShoot", 12, 15, 48),
+    shoot2 = Sprite.load("giantAttack2", path.."giantShoot2", 11, 26, 51),
     spawn = Sprite.load("giantSpawn", path.."giantSpawn", 17, 21, 54),
     death = Sprite.load("giantDeath", path.."giantDeath", 10, 81, 57),
     mask = Sprite.load("giantMask", path.."giantMask", 1, 14, 48),
@@ -37,6 +38,7 @@ giant:addCallback("create", function(actor)
         jump = sprites.jump,
         walk = sprites.walk,
         shoot = sprites.shoot,
+        shoot2 = sprites.shoot2,
         death = sprites.death,
 	palette = sprites.palette
     }
@@ -60,6 +62,65 @@ Monster.skillCallback(giant, 1, function(actor, relevantFrame)
 	if relevantFrame == 6 or relevantFrame == 8 then
 		sounds.attack:play(1 + 1)
 		actor:fireExplosion(actor.x + (20 * actor.xscale), actor.y, 1, 1, 2, sprites.hit, nil)
+	end
+end)
+
+local warning = Object.new("giantwarning")
+warning.sprite = Sprite.load("giantWarning", path.."giantWarning", 2, 9, 20)
+
+local fist = Object.new("giantfist")
+fist.sprite = Sprite.load("giantFist", path.."giantFist", 8, 4, 10)
+
+fist:addCallback("create", function(self)
+	local sD = self:getData()
+	self.spriteSpeed = 0.2
+end)
+
+fist:addCallback("step", function(self)
+	local sD = self:getData()
+	if self.subimage == 2 then
+		print(sD.damage)
+		if not sD.damage then
+			sD.damage = 34 * Difficulty.getScaling("damage")
+		end
+		misc.fireExplosion(self.x, self.y, 7/19, 16/4, sD.damage * 0.6, "enemy")
+		sounds.attack:play(1 + 1)
+	elseif self.subimage >= 7 then
+		self:destroy()
+	end
+end)
+
+warning:addCallback("create", function(self)
+	local sD = self:getData()
+	self.spriteSpeed = 0.2
+	sD.life = 0
+end)
+
+warning:addCallback("step", function(self)
+	local sD = self:getData()
+	sD.life = sD.life + 1
+	if sD.life >= 61 then
+		local f = fist:create(self.x, self.y + 5)
+		local fD = f:getData()
+		fD.damage = sD.damage
+		self:destroy()
+	end
+end)
+
+Monster.setSkill(giant, 2, 900, 3 * 60, function(actor)
+	Monster.setActivityState(actor, 2, actor:getAnimation("shoot2"), 0.2, true, true)
+	Monster.activateSkillCooldown(actor, 2)
+end)
+Monster.skillCallback(giant, 2, function(actor, relevantFrame)
+	local aA = actor:getAccessor()
+	if relevantFrame == 6 then
+		sounds.attack:play(1 + 1)
+--		actor:fireExplosion(actor.x + (20 * actor.xscale), actor.y, 1, 1, 2, sprites.hit, nil)
+		local player = Object.findInstance(aA.target)
+		local pickedGround = Object.find("b"):findLine(player.x, player.y, player.x, player.y + 100) or Object.find("bNoSpawn"):findLine(player.x, player.y, player.x, player.y + 100) or Object.find("b"):findNearest(player.x, player.y)
+		local w = warning:create(math.clamp(player.x + math.random(-45, 45), pickedGround.x, pickedGround.x + (pickedGround.xscale * 16)), pickedGround.y - 5)
+		local wD = w:getData() --no way wd gaster from undertale
+		wD.damage = aA.damage
 	end
 end)
 
