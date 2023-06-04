@@ -69,7 +69,7 @@ local warning = Object.new("giantwarning")
 warning.sprite = Sprite.load("giantWarning", path.."giantWarning", 2, 9, 20)
 
 local fist = Object.new("giantfist")
-fist.sprite = Sprite.load("giantFist", path.."giantFist", 8, 4, 10)
+fist.sprite = Sprite.load("giantFist", path.."giantFist", 9, 6, 16)
 
 fist:addCallback("create", function(self)
 	local sD = self:getData()
@@ -83,9 +83,9 @@ fist:addCallback("step", function(self)
 		if not sD.damage then
 			sD.damage = 34 * Difficulty.getScaling("damage")
 		end
-		misc.fireExplosion(self.x, self.y, 7/19, 16/4, sD.damage * 0.6, "enemy")
+		misc.fireExplosion(self.x, self.y, 15/19, 20/4, sD.damage * 0.6, "enemy")
 		sounds.attack:play(1 + 1)
-	elseif self.subimage >= 7 then
+	elseif self.subimage >= 8 then
 		self:destroy()
 	end
 end)
