@@ -1,7 +1,7 @@
 {
-    "name": "Meridian DEV",
-	"version": "1.0.0",
-    "description": "A map expansion mod focused on making the world of Risk of Rain more Explorable! With 6 new stages (more coming soon :) ) to enjoy.\n\nIf you are looking to suggest stages, enemies and what not, please contact me on Discord either through direct messages or by pinging me in the 'Rick of Rain?' server!\n\nContributors:\n\nGlasus = Basalt Crab Sprites \n\nTHIS IS A DEVELOPER ONLY BUILD, DO NOT SHARE.", 
+    "name": "Meridian",
+	"version": "1.0.4",
+    "description": "A map expansion mod focused on making the world of Risk of Rain more Explorable! With 6 new stages (more coming soon :) ) to enjoy.\n\nIf you are looking to suggest stages, enemies and what not, please contact me on Discord either through direct messages or by pinging me in the 'Rick of Rain?' server!\n\nContributors:\n\nGlasus = Basalt Crab Sprites", 
 	"internalname": "RoRMaps",
     "author": "Winslow, Altzeus, retroPacifist",
 	"mpcompat": true,
