@@ -2067,6 +2067,7 @@ local function mkObjs()
         local r = {0, 0, 16, 16}
         local d = {image = s, x = 0, y = 0, region = r}
         local sf = Surface(512, 512)
+	sf:clear()
         st(sf)
         local w
         for _x = x / 16, (x + 512) / 16 do
