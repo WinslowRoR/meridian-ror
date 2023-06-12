@@ -15,18 +15,15 @@ BasaltQuarry.rooms:add(BasaltQuarryVar)
 BasaltQuarry.music = Sound.load("musicBasaltQuarry", path.."Misc/Music/stageBasaltQuarry.ogg")
 
 -- Starswept Valley --
-Sprite.load("Tile16Valley", path.."Stages/StarsweptValley/tileset", 1, 0, 0)
-Sprite.load("64StarValley", path.."Stages/StarsweptValley/tilesetBG", 1, 0, 0)
-Sprite.load("BigPlanetOrange", path.."Stages/StarsweptValley/planet", 1, 0, 0)
-Sprite.load("ValleyFog", path.."Stages/StarsweptValley/fog", 1, 0, 0)
-Sprite.load("OrangeSky", path.."Stages/StarsweptValley/sky", 1, 0, 0)
-Sprite.load("ValleyBG1", path.."Stages/StarsweptValley/bg1", 1, 0, 0)
-Sprite.load("ValleyClouds", path.."Stages/StarsweptValley/clouds", 1, 0, 0)
+Sprite.load("Tile16Star", path.."Stages/StarsweptValley/tileset", 1, 0, 0)
+Sprite.load("Tile16StarBridge", path.."Stages/StarsweptValley/bridge", 1, 0, 0)
+Sprite.load("SolarEclipse", path.."Stages/StarsweptValley/solarEclipse", 1, 0, 0)
+Sprite.load("skyStar", path.."Stages/StarsweptValley/sky", 1, 0, 0)
 
 local StarsweptValley = require("resources.Stages.StarsweptValley.stage")
 Stage.progression[2]:add(StarsweptValley)
-local StarsweptValleyVar = require("resources.Stages.StarsweptValley.variant")
-StarsweptValley.rooms:add(StarsweptValleyVar)
+--local StarsweptValleyVar = require("resources.Stages.StarsweptValley.variant")
+--StarsweptValley.rooms:add(StarsweptValleyVar)
 
 StarsweptValley.music = Sound.load("musicStarsweptValley", path.."Misc/Music/stageStarsweptValley.ogg")
 
@@ -54,7 +51,7 @@ Sprite.load("ReliquaryBG2", path.."Stages/DissonantReliquary/bg2", 1, 0, 0)
 local DissonantReliquary = require("resources.Stages.DissonantReliquary.stage")
 Stage.progression[5]:add(DissonantReliquary)
 
-DissonantReliquary.music = Sound.load("killing_wind", path.."Misc/Music/stageDissonantReliquary.ogg")
+DissonantReliquary.music = Sound.load("musicDissonantReliquary", path.."Misc/Music/stageDissonantReliquary.ogg")
 
 -- Hive Savanna --
 Sprite.load("bTile16Savannah", path.."Stages/HiveSavanna/tileset", 1, 0, 0)
@@ -66,4 +63,4 @@ Sprite.load("CloudsSavanna", path.."Stages/HiveSavanna/clouds", 1, 0, 0)
 local HiveSavanna = require("resources.Stages.HiveSavanna.stage")
 Stage.progression[1]:add(HiveSavanna)
 
-HiveSavanna.music = Sound.find("musicStage2")
+HiveSavanna.music = Sound.load("musicHiveSavanna", path.."Misc/Music/stageHiveSavanna.ogg")
