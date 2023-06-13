@@ -18,7 +18,7 @@ end
 
 registercallback("postLoad", function()
 for _, m in ipairs(modloader.getMods()) do
-	for _, i in ipairs(MonsterCard.findAll(modloader.getModName(m))) do
+	for _, i in ipairs(MonsterCard.findAll(m)) do
 		if i.isBoss == false and i.type == "classic" then
 			i.eliteTypes:add(elite)
 		end
