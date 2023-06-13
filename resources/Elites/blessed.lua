@@ -24,7 +24,7 @@ if misc.director:get("stages_passed") >= 5 and dD.blessed1 == 0 then
 		end
 	end
 	for _, m in ipairs(modloader.getMods()) do
-		for _, i in ipairs(MonsterCard.findAll(modloader.getModName(m))) do
+		for _, i in ipairs(MonsterCard.findAll(m)) do
 			if i.isBoss == false then
 				i.eliteTypes:add(elite)
 			end
@@ -36,7 +36,7 @@ elseif misc.director:get("stages_passed") >= 15 and dD.blessed2 == 0 then
 		i.eliteTypes:add(elite)
 	end
 	for _, m in ipairs(modloader.getMods()) do
-		for _, i in ipairs(MonsterCard.findAll(modloader.getModName(m))) do
+		for _, i in ipairs(MonsterCard.findAll(m)) do
 			i.eliteTypes:add(elite)
 		end
 	end
@@ -52,7 +52,7 @@ registercallback("onGameStart", function()
 		end
 	end
 	for _, m in ipairs(modloader.getMods()) do
-		for _, i in ipairs(MonsterCard.findAll(modloader.getModName(m))) do
+		for _, i in ipairs(MonsterCard.findAll(m)) do
 			if i.isBoss == false then
 				i.eliteTypes:remove(elite)
 			end
