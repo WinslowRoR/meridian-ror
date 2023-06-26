@@ -22,8 +22,8 @@ Sprite.load("skyStar", path.."Stages/StarsweptValley/sky", 1, 0, 0)
 
 local StarsweptValley = require("resources.Stages.StarsweptValley.stage")
 Stage.progression[2]:add(StarsweptValley)
---local StarsweptValleyVar = require("resources.Stages.StarsweptValley.variant")
---StarsweptValley.rooms:add(StarsweptValleyVar)
+local StarsweptValleyVar = require("resources.Stages.StarsweptValley.variant")
+StarsweptValley.rooms:add(StarsweptValleyVar)
 
 StarsweptValley.music = Sound.load("musicStarsweptValley", path.."Misc/Music/stageStarsweptValley.ogg")
 
