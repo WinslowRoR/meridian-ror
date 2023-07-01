@@ -1,17 +1,23 @@
 local path = "resources/"
 
+-- General --
+Sprite.load("statues1", path.."Misc/Sprites/statues1", 1, 0, 0)
+
 -- Basalt Quarry --
 Sprite.load("Tile16Basalt", path.."Stages/BasaltQuarry/tileset", 1, 0, 0)
-Sprite.load("64BasaltQuarry", path.."Stages/BasaltQuarry/tilesetBG", 1, 0, 0)
-Sprite.load("BasaltSky", path.."Stages/BasaltQuarry/sky", 1, 0, 0)
-Sprite.load("BasaltBG1", path.."Stages/BasaltQuarry/bg1", 1, 0, 0)
-Sprite.load("BasaltClouds1", path.."Stages/BasaltQuarry/BasaltClouds1", 1, 0, 0)
+Sprite.load("basaltSky", path.."Stages/BasaltQuarry/sky", 1, 0, 0)
+Sprite.load("caveTopBasalt", path.."Stages/BasaltQuarry/caveTop", 1, 0, 0)
+Sprite.load("duneBasalt", path.."Stages/BasaltQuarry/dune", 1, 0, 0)
+Sprite.load("basaltMoon", path.."Stages/BasaltQuarry/moon", 1, 0, 0)
+Sprite.load("BasaltClouds1", path.."Stages/BasaltQuarry/cloud1", 1, 0, 0)
+Sprite.load("BasaltClouds2", path.."Stages/BasaltQuarry/cloud2", 1, 0, 0)
+Sprite.load("BasaltClouds3", path.."Stages/BasaltQuarry/cloud3", 1, 0, 0)
 
 local BasaltQuarry = require("resources.Stages.BasaltQuarry.stage")
 Stage.progression[4]:add(BasaltQuarry)
---[[local BasaltQuarryVar = require("resources.Stages.BasaltQuarry.variant")
+local BasaltQuarryVar = require("resources.Stages.BasaltQuarry.variant")
 BasaltQuarry.rooms:add(BasaltQuarryVar)
-]]
+
 BasaltQuarry.music = Sound.load("musicBasaltQuarry", path.."Misc/Music/stageBasaltQuarry.ogg")
 
 -- Starswept Valley --
@@ -19,6 +25,8 @@ Sprite.load("Tile16Star", path.."Stages/StarsweptValley/tileset", 1, 0, 0)
 Sprite.load("Tile16StarBridge", path.."Stages/StarsweptValley/bridge", 1, 0, 0)
 Sprite.load("SolarEclipse", path.."Stages/StarsweptValley/solarEclipse", 1, 0, 0)
 Sprite.load("skyStar", path.."Stages/StarsweptValley/sky", 1, 0, 0)
+Sprite.load("pillarsStar", path.."Stages/StarsweptValley/pillars", 1, 0, 0)
+Sprite.load("valleyStar", path.."Stages/StarsweptValley/valley", 1, 0, 0)
 
 local StarsweptValley = require("resources.Stages.StarsweptValley.stage")
 Stage.progression[2]:add(StarsweptValley)
