@@ -72,3 +72,19 @@ local HiveSavanna = require("resources.Stages.HiveSavanna.stage")
 Stage.progression[1]:add(HiveSavanna)
 
 HiveSavanna.music = Sound.load("musicHiveSavanna", path.."Misc/Music/stageHiveSavanna.ogg")
+
+-- Shallow Rotlands --
+Sprite.load("Tile16Rotland", path.."Stages/ShallowRotlands/tileset", 1, 0, 0)
+Sprite.load("RotlandTrees64b", path.."Stages/ShallowRotlands/RotlandTrees64b", 1, 0, 0)
+Sprite.load("DeepForest1", path.."Stages/ShallowRotlands/DeepForest1", 1, 0, 0)
+Sprite.load("DeepForest2", path.."Stages/ShallowRotlands/DeepForest2", 1, 0, 0)
+Sprite.load("DeepForest3", path.."Stages/ShallowRotlands/DeepForest3", 1, 0, 0)
+Sprite.load("SRFill", path.."Stages/ShallowRotlands/fill", 1, 0, 0)
+Sprite.load("ShallowTop", path.."Stages/ShallowRotlands/top", 1, 0, 0)
+Sprite.load("ShallowValley", path.."Stages/ShallowRotlands/mountains", 1, 0, 0)
+
+local ShallowRotlands = require("resources.Stages.ShallowRotlands.stage")
+Stage.progression[4]:add(ShallowRotlands)
+
+ShallowRotlands.music = Sound.load("musicShallowRotlands", path.."Misc/Music/musicShallowRotlands.ogg")
+
